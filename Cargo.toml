@@ -1,0 +1,11 @@
+[package]
+name = "dir_name_comparator"
+version = "0.1.0"
+authors = ["terabytesdev"]
+edition = "2021"
+description = "Compares the similarity of directory names in a given folder. Non-recursive. Comparison metric is hamming distance."
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+structopt = "0.3.25"
