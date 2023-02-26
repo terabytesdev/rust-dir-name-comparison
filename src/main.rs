@@ -23,7 +23,6 @@ fn main() -> Result<(),std::io::Error> {
         let metadata = fs::metadata(&path)?;
         let filetype = metadata.file_type();
         if filetype.is_dir() {
-            println!("{:?}", &path);
             directories.push(path);
         }
     }
@@ -37,7 +36,7 @@ fn main() -> Result<(),std::io::Error> {
                 if dir1.file_name().is_some() && dir2.file_name().is_some() {
                     let name1 = dir1.file_name().unwrap().to_str();
                     let name2 = dir2.file_name().unwrap().to_str();
-                    
+
                     let dist = hamming_distance(&name1.unwrap(), &name2.unwrap()) / name1.unwrap().len() as f32;
                     let round_dist = dist.round() as i32;
                     if  round_dist >= distance_threshold {
